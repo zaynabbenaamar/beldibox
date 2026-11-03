@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beldi Box by Imen | Gastronomie Marocaine</title>
+    
+    <!-- Polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icônes -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --dark-bg: #050505;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7);
+            color: black;
+        }
+
+        .glow-on-hover { transition: all 0.4s ease; }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6), 0 0 50px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .glow-text:hover {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+            color: var(--gold-light);
+        }
+
+        .card-glow { transition: all 0.5s ease; }
+        .card-glow:hover {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15), 0 0 20px rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--dark-bg); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 w-full z-40 bg-[#050505]/90 backdrop-blur-md border-b border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#accueil" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full border-2 border-[#D4AF37] flex items-center justify-center glow-on-hover cursor-pointer">
+                    <span class="font-serif text-[#D4AF37] font-bold text-xl">BB</span>
+                </div>
+                <div>
+                    <h1 class="font-serif text-2xl font-bold tracking-widest text-[#D4AF37] group-hover:text-[#F3E5AB] transition-colors">BELDI BOX</h1>
+                    <p class="text-[10px] tracking-[0.3em] uppercase text-gray-400">By Imen</p>
+                </div>
+            </a>
+
+            <!-- Menu Principal -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#accueil" class="text-xs uppercase tracking-widest text-gray-300 transition-all glow-text">Accueil</a>
+                <a href="#menu" class="text-xs uppercase tracking-widest text-gray-300 transition-all glow-text">Menu de la Semaine</a>
+                <a href="#savoir-faire" class="text-xs uppercase tracking-widest text-gray-300 transition-all glow-text">Savoir-Faire</a>
+                <a href="#offres" class="text-xs uppercase tracking-widest text-gray-300 transition-all glow-text">Offres Spéciales</a>
+                <a href="#retours" class="text-xs uppercase tracking-widest text-gray-300 transition-all glow-text">Retours Clients</a>
+            </nav>
+
+            <!-- Réseaux Sociaux -->
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/beldibox_1?dlrf=d2Rqb2pmd3MxMnhs" target="_blank" class="text-[#D4AF37] hover:text-white transition-colors p-2 glow-on-hover rounded-full text-xl" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/212625664890" target="_blank" class="text-[#D4AF37] hover:text-white transition-colors p-2 glow-on-hover rounded-full text-xl" title="WhatsApp Direct">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="accueil" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- TEXTE -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#D4AF37] text-xs uppercase tracking-widest mb-6">
+                        <i data-feather="star" style="width: 14px;"></i> Haute Cuisine Beldi
+                    </div>
+                    
+                    <h2 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        L'Élégance de la <br/>
+                        <span class="text-gold-gradient italic">Gastronomie Marocaine</span>
+                    </h2>
+                    
+                    <p class="text-gray-400 text-lg font-light tracking-wide mb-10 max-w-xl mx-auto lg:mx-0">
+                        Chaque semaine, la Chef Imen réinvente les classiques beldi avec une touche de raffinement et de haute couture culinaire.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+                        <a href="#menu" class="px-8 py-4 bg-transparent border-2 border-[#D4AF37] text-[#D4AF37] font-semibold tracking-widest uppercase text-xs glow-on-hover flex items-center justify-center gap-3 rounded-sm">
+                            Le Menu de la Semaine
+                        </a>
+                        <a href="https://wa.me/212625664890" target="_blank" class="px-8 py-4 bg-[#D4AF37] text-black font-bold tracking-widest uppercase text-xs border-2 border-[#D4AF37] glow-on-hover flex items-center justify-center gap-3 rounded-sm">
+                            <i class="fab fa-whatsapp text-base"></i> Commander Directement
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PHOTO DU CHEF (CADRE INCLINÉ DORÉ) -->
+                <div class="lg:col-span-5 relative flex justify-center items-center">
+                    <div class="relative w-80 h-[430px] md:w-96 md:h-[500px] group">
+                        <!-- Halo doré -->
+                        <div class="absolute inset-0 bg-[#D4AF37]/20 rounded-3xl blur-2xl group-hover:bg-[#D4AF37]/35 transition-all duration-500"></div>
+                        
+                        <!-- Cadres dorés inclinés -->
+                        <div class="absolute inset-0 border-2 border-[#D4AF37] rounded-3xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-700 shadow-[0_0_30px_rgba(212,175,55,0.3)]"></div>
+                        <div class="absolute inset-0 border border-[#F3E5AB]/40 rounded-3xl transform rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+
+                        <!-- Photo Chef (URL Conservée) -->
+                        <div class="relative w-full h-full rounded-3xl overflow-hidden border border-[#D4AF37]/50 shadow-2xl bg-black transform rotate-1 group-hover:rotate-0 transition-transform duration-700">
+                            <img src="https://www.image2url.com/r2/default/images/1793695116073-d4f1369c-5905-4c21-9bbd-af9c1b2ed0ee.jpeg" alt="Chef Imen" class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION MENU DE LA SEMAINE -->
+    <section id="menu" class="py-24 relative bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-[#D4AF37] text-sm uppercase tracking-[0.3em] font-semibold mb-4">À la carte</p>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold text-white">Le Menu de la Semaine</h3>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto mt-8 rounded-full"></div>
+            </div>
+
+            <!-- Conteneur vide (0 publication) -->
+            <div id="menu-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+        </div>
+    </section>
+
+    <!-- SECTION SAVOIR-FAIRE -->
+    <section id="savoir-faire" class="py-24 relative bg-[#050505] border-t border-[#D4AF37]/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-[#D4AF37] text-sm uppercase tracking-[0.3em] font-semibold mb-4">Notre Passion</p>
+                <h3 class="font-serif text-4xl font-bold text-white">Savoir-Faire & Engagements</h3>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto mt-8 rounded-full"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-6">Découvrez l'exigence de notre cuisine artisanale. Chaque recette est confectionnée avec dévouement par Chef Imen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-[#111] p-8 rounded-xl border border-[#D4AF37]/20 card-glow text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] text-2xl mb-6 bg-black">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">100% Fait Maison</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Préparations artisanales élaborées chaque jour à la commande.</p>
+                </div>
+
+                <div class="bg-[#111] p-8 rounded-xl border border-[#D4AF37]/20 card-glow text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] text-2xl mb-6 bg-black">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Ingrédients Nobles</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Sélection rigoureuse des meilleurs produits locaux et épices pures.</p>
+                </div>
+
+                <div class="bg-[#111] p-8 rounded-xl border border-[#D4AF37]/20 card-glow text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] text-2xl mb-6 bg-black">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Haute Couture</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Une présentation soignée au millimètre pour sublimer vos tables.</p>
+                </div>
+
+                <div class="bg-[#111] p-8 rounded-xl border border-[#D4AF37]/20 card-glow text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] text-2xl mb-6 bg-black">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold text-white mb-3">Service VIP</h4>
+                    <p class="text-gray-400 text-xs leading-relaxed">Prise en charge personnalisée et livraison sur mesure.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/beldibox_1?dlrf=d2Rqb2pmd3MxMnhs" target="_blank" class="inline-flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors uppercase tracking-widest text-sm font-semibold border-b border-[#D4AF37] pb-1">
+                    Découvrir notre univers sur Instagram <i class="fab fa-instagram ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION OFFRES SPÉCIALES -->
+    <section id="offres" class="py-24 relative bg-[#0a0a0a] border-t border-[#D4AF37]/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <i data-feather="gift" class="text-[#D4AF37] w-8 h-8 mx-auto mb-4"></i>
+                <h3 class="font-serif text-4xl font-bold text-white mb-4">Nos Offres Spéciales</h3>
+                <p class="text-gray-400">Des assortiments exclusifs pour vos événements et réceptions.</p>
+            </div>
+
+            <!-- Conteneur vide (0 publication) -->
+            <div id="offres-container" class="grid grid-cols-1 md:grid-cols-2 gap-10"></div>
+        </div>
+    </section>
+
+    <!-- SECTION RETOURS CLIENTS -->
+    <section id="retours" class="py-24 relative bg-[#050505] border-t border-[#D4AF37]/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-[#D4AF37] text-sm uppercase tracking-[0.3em] font-semibold mb-4">Témoignages</p>
+                <h3 class="font-serif text-4xl font-bold text-white">Retours Clients</h3>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto mt-8 rounded-full"></div>
+            </div>
+
+            <!-- Conteneur vide pour recevoir les futurs avis -->
+            <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"></div>
+
+            <!-- Formulaire d'Avis -->
+            <div class="max-w-2xl mx-auto bg-[#111] p-8 md:p-10 rounded-xl border border-[#D4AF37]/30 card-glow">
+                <h4 class="font-serif text-2xl font-bold text-[#D4AF37] mb-2 text-center">Laisser votre avis</h4>
+                <p class="text-gray-400 text-xs text-center mb-8 uppercase tracking-widest">Partagez votre expérience avec Beldi Box</p>
+
+                <form id="comment-form" onsubmit="addReview(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-[#D4AF37] mb-2 font-semibold">Votre Nom</label>
+                            <input type="text" id="review-name" required placeholder="Ex: Amina B." class="w-full bg-black border border-gray-800 focus:border-[#D4AF37] text-white p-4 rounded-sm outline-none transition-all glow-on-hover">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-[#D4AF37] mb-2 font-semibold">Votre Note</label>
+                            <div id="star-picker" class="flex gap-2 text-2xl py-2 cursor-pointer">
+                                <i class="fas fa-star star-item text-[#D4AF37] transition-all" data-val="1"></i>
+                                <i class="fas fa-star star-item text-[#D4AF37] transition-all" data-val="2"></i>
+                                <i class="fas fa-star star-item text-[#D4AF37] transition-all" data-val="3"></i>
+                                <i class="fas fa-star star-item text-[#D4AF37] transition-all" data-val="4"></i>
+                                <i class="fas fa-star star-item text-[#D4AF37] transition-all" data-val="5"></i>
+                            </div>
+                            <input type="hidden" id="review-rating" value="5">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <label class="block text-xs uppercase tracking-widest text-[#D4AF37] mb-2 font-semibold">Votre Commentaire</label>
+                        <textarea id="review-text" rows="4" required placeholder="Racontez-nous ce que vous avez pensé de vos plats..." class="w-full bg-black border border-gray-800 focus:border-[#D4AF37] text-white p-4 rounded-sm outline-none transition-all glow-on-hover resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-[#D4AF37] text-black font-bold uppercase tracking-widest text-xs rounded-sm glow-on-hover hover:bg-white transition-colors flex justify-center items-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                        <i class="fas fa-paper-plane"></i> Publier mon avis
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#020202] py-12 border-t border-[#D4AF37]/20 text-center">
+        <h2 class="font-serif text-3xl font-bold text-[#D4AF37] mb-4">Beldi Box</h2>
+        <p class="text-gray-500 text-sm tracking-widest uppercase mb-6">La Haute Couture Marocaine</p>
+        
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="https://www.instagram.com/beldibox_1?dlrf=d2Rqb2pmd3MxMnhs" target="_blank" class="text-gray-400 hover:text-[#D4AF37] transition-colors text-2xl" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/212625664890" target="_blank" class="text-gray-400 hover:text-[#D4AF37] transition-colors text-2xl" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+        <p class="text-gray-700 text-xs">© 2026 Beldi Box by Imen. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JAVASCRIPT (0 publication au départ) -->
+    <script>
+        feather.replace();
+
+        // Tableaux vides prêts à recevoir vos éléments depuis votre futur espace admin
+        let menuItems = [];
+        let offresItems = [];
+        let reviews = [];
+
+        // Gestion des 5 étoiles interactives
+        let selectedRating = 5;
+        const starItems = document.querySelectorAll('.star-item');
+        const hiddenRatingInput = document.getElementById('review-rating');
+
+        function updateStarUI(val) {
+            starItems.forEach(item => {
+                const itemVal = parseInt(item.getAttribute('data-val'));
+                if (itemVal <= val) {
+                    item.classList.add('text-[#D4AF37]');
+                    item.classList.remove('text-gray-700');
+                } else {
+                    item.classList.remove('text-[#D4AF37]');
+                    item.classList.add('text-gray-700');
+                }
+            });
+        }
+
+        starItems.forEach(item => {
+            item.addEventListener('click', () => {
+                selectedRating = parseInt(item.getAttribute('data-val'));
+                hiddenRatingInput.value = selectedRating;
+                updateStarUI(selectedRating);
+            });
+
+            item.addEventListener('mouseenter', () => {
+                const hoverVal = parseInt(item.getAttribute('data-val'));
+                updateStarUI(hoverVal);
+            });
+        });
+
+        document.getElementById('star-picker').addEventListener('mouseleave', () => {
+            updateStarUI(selectedRating);
+        });
+
+        function renderMenu() {
+            const container = document.getElementById('menu-container');
+            if (menuItems.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500 border border-[#D4AF37]/10 rounded-xl bg-[#111]">
+                        <p class="text-sm uppercase tracking-widest text-[#D4AF37]">Les nouvelles créations arrivent bientôt</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = menuItems.map(item => `
+                <div class="group bg-[#111] rounded-xl overflow-hidden border border-[#D4AF37]/20 card-glow flex flex-col justify-between p-8">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[#D4AF37] text-xs font-semibold uppercase tracking-wider">${item.category}</span>
+                            <span class="bg-black border border-[#D4AF37]/50 text-[#D4AF37] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                                ${item.price} MAD
+                            </span>
+                        </div>
+                        <h4 class="font-serif text-2xl font-bold text-white mb-4 group-hover:text-[#F3E5AB] transition-all">${item.title}</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-8">${item.description}</p>
+                    </div>
+                    <button onclick="orderWhatsApp('${item.title}', ${item.price})" class="w-full py-4 bg-[#D4AF37] text-black text-sm uppercase tracking-widest font-bold rounded-sm hover:bg-white glow-on-hover flex justify-center items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i> Commander sur WhatsApp
+                    </button>
+                </div>
+            `).join('');
+            feather.replace();
+        }
+
+        function renderOffres() {
+            const container = document.getElementById('offres-container');
+            if (offresItems.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500 border border-[#D4AF37]/10 rounded-xl bg-[#111]">
+                        <p class="text-sm uppercase tracking-widest text-[#D4AF37]">Aucune offre spéciale disponible pour le moment</p>
+                    </div>`;
+                return;
+            }
+        }
+
+        function renderReviews() {
+            const container = document.getElementById('reviews-container');
+            if (reviews.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500 border border-[#D4AF37]/10 rounded-xl bg-[#111]">
+                        <p class="text-sm uppercase tracking-widest text-[#D4AF37]">Soyez le premier à laisser un avis</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = reviews.map(r => {
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    stars += i < r.rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
+                }
+                return `
+                    <div class="bg-[#111] p-8 rounded-xl border border-[#D4AF37]/20 card-glow flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-[#D4AF37] mb-4 gap-1">
+                                ${stars}
+                            </div>
+                            <p class="text-gray-300 text-sm italic leading-relaxed mb-6">
+                                "${r.text}"
+                            </p>
+                        </div>
+                        <p class="text-[#D4AF37] font-semibold text-sm">— ${r.name}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function addReview(e) {
+            e.preventDefault();
+            const name = document.getElementById('review-name').value;
+            const rating = parseInt(hiddenRatingInput.value);
+            const text = document.getElementById('review-text').value;
+
+            reviews.unshift({ name, rating, text });
+            renderReviews();
+
+            document.getElementById('comment-form').reset();
+            selectedRating = 5;
+            hiddenRatingInput.value = 5;
+            updateStarUI(5);
+            alert("Merci pour votre avis ! Il a été publié avec succès.");
+        }
+
+        function orderWhatsApp(title, price) {
+            const message = `Bonjour Chef Imen ✨\nJe souhaite commander : *${title}* (${price} MAD).\nMerci de me confirmer la disponibilité.`;
+            window.open(`https://wa.me/212625664890?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        renderMenu();
+        renderOffres();
+        renderReviews();
+        updateStarUI(5);
+    </script>
+</body>
+</html>
